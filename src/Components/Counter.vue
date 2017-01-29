@@ -1,10 +1,6 @@
 <template>
     <div id="Counter">
-      <div id="myCount">Score:
-        <transition name="fade" mode="out-in">
-            <b>{{ displayedValue }}</b>
-        </transition>
-      </div>
+      <div id="myCount">Score:<b>{{ displayedValue }}</b></div>
       </br>
       <button v-on:click="up()">Up</button>
       <button v-on:click="down()">Down</button>
@@ -23,7 +19,6 @@ export default {
       currentValue:this.value,
       currentFormat:this.format,
       newValue:0,
-      show:true,
     }
   },
   props: ["value","format","id"],
@@ -61,19 +56,6 @@ export default {
 </script>
 
 <style>
-
-.allert{
-  position: absolute;
-  left: 40%;
-  top: 100px;
-  padding: 20px;
-  color: #fff;
-  background: #333;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-}
-
 #Counter{
   margin-top: 30px;
   width:80%;
@@ -114,17 +96,4 @@ input[type="text"] {
     font-size: 1.3em;
     text-align: center;
 }
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
-
 </style>

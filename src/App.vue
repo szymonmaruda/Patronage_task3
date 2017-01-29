@@ -4,7 +4,7 @@
     Format: <input type="text" v-model="format" />
     <button @click="add()">Add</button>
     <button @click="deleteMe()">Delete</button>
-  <hr>
+    <hr>
     <transition-group name="list">
       <counter v-for="Counter in counters" class="list-item" :value="Counter.value" :format="Counter.format" :key="Counter.id"></counter>
     </transition-group>
@@ -75,15 +75,12 @@ body{
     background-color: #E08548;
 }
 
-.list-item {
-
-}
 .list-enter-active, .list-leave-active {
   transition: all 1s;
 }
 .list-enter, .list-leave-to /* .list-leave-active for <2.1.8 */ {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(60px);
 }
 
 </style>
